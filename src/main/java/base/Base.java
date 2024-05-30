@@ -28,8 +28,8 @@ public class Base {
 			case "GC":
 				WebDriverManager.chromedriver().setup();
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--headless");
-				driver = new ChromeDriver(options);
+//				options.addArguments("--headless");
+				driver = new ChromeDriver();
 				break;
 			case "SF":
 				WebDriverManager.safaridriver().setup();
