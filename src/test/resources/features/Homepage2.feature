@@ -1,23 +1,21 @@
 Feature: Krisshsaahi portfolio homepage test
 
-  @regression @smoke @sanity
-  Scenario Outline: To verify the homepage functionality of portfolio and send an email
+  Background: user navigates and scroll down to contact us
     Given user naviagtes to krisshportfolio
     When user clicks on contact us
+
+  @sainty
+  Scenario Outline: To verify the homepage functionality of portfolio and send an email
     And user send email with "<email>", "<subject>" and "<message>"
     Then user close the browser
 
     Examples: 
       | email             | subject         | message              |
-      | andy@gmail.com    | Andy Subject    | Message from Andy    |
-      | ruby@gmail.com    | Ruby Subject    | Message from Ruby    |
       | taylor@gmail.com  | Taylor Subject  | Message from Taylor  |
       | jessica@gmail.com | Jessica Subject | Message from Jessica |
 
-  @sanity @perf
+  @regression @smoke
   Scenario Outline: To verify the homepage functionality of portfolio and send an email
-    Given user naviagtes to krisshportfolio
-    When user clicks on contact us
     And user send email with "<email>", "<subject>" and "<message>"
     Then user close the browser
 
@@ -25,10 +23,8 @@ Feature: Krisshsaahi portfolio homepage test
       | email          | subject      | message           |
       | ruby@gmail.com | Ruby Subject | Message from Ruby |
 
-  @regression
+  @smoke @sanity @perf
   Scenario Outline: To verify the homepage functionality of portfolio and send an email
-    Given user naviagtes to krisshportfolio
-    When user clicks on contact us
     And user send email with "<email>", "<subject>" and "<message>"
     Then user close the browser
 
